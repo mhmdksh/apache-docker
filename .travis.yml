@@ -2,10 +2,10 @@ sudo: required
 services:
   - docker
 script:
-  - docker build -t apach-docker-edd .
+  - docker build -t apache-docker-edd .
 after_success:
   - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-  - docker tag apach-docker-edd $DOCKER_USER/apach-docker-edd:$TRAVIS_BUILD_NUMBER
-  - docker push $DOCKER_USER/apach-docker-edd:$TRAVIS_BUILD_NUMBER
-  - docker tag apach-docker-edd $DOCKER_USER/apach-docker-edd:latest
-  - docker push $DOCKER_USER/apach-docker-edd:latest
+  - docker tag apache-docker-edd $DOCKER_USER/apache-docker-edd:$TRAVIS_BUILD_NUMBER
+  - docker push $DOCKER_USER/apache-docker-edd:$TRAVIS_BUILD_NUMBER
+  - docker tag apache-docker-edd $DOCKER_USER/apache-docker-edd:latest
+  - docker push $DOCKER_USER/apache-docker-edd:latest
